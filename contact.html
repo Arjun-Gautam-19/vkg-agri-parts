@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us — VKG Agri Parts</title>
+  <meta name="description" content="Send an inquiry to VKG Agri Parts." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="brand" aria-label="VKG Agri Parts home">
+        <img src="assets/logo.png" alt="VKG Agri Parts — A Division of VKG Impex" />
+      </a>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="about.html" data-i18n="nav.about">About Us</a>
+        <a href="brands.html" data-i18n="nav.brands">Brands We Cover</a>
+        <a href="contact.html" class="active" data-i18n="nav.contact">Contact</a>
+        <a href="contact.html" class="cta-btn" data-i18n="nav.quote">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="crumb" data-i18n="contact.crumb">Contact</div>
+      <h1 data-i18n="contact.headline">Send us your inquiry.</h1>
+      <p>Share your parts list, target quantities, and destination — we'll send back a detailed quotation within one business day.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <div class="sub" data-i18n="contact.reachUs">Reach Us Directly</div>
+        <h2 style="margin-bottom: 22px;" data-i18n="contact.talkToPerson">Talk to a real person.</h2>
+
+        <div class="row">
+          <div class="k" data-i18n="contact.email">Email</div>
+          <div class="v">sales@vkgimpex.com<br /><span style="color:var(--color-muted);font-size:13px;">vkgimpex@yahoo.com</span></div>
+        </div>
+        <div class="row">
+          <div class="k" data-i18n="contact.phone">Phone</div>
+          <div class="v">+91 9871398644<br /><span style="color:var(--color-muted);font-size:13px;">+91 9871604111</span><br /><span style="color:var(--color-muted);font-size:13px;" data-i18n="contact.timingNote">Mon–Sat, 09:30–18:30 IST</span></div>
+        </div>
+        <div class="row">
+          <div class="k" data-i18n="contact.whatsapp">WhatsApp</div>
+          <div class="v">+91 9871398644</div>
+        </div>
+        <div class="row">
+          <div class="k" data-i18n="contact.address">Address</div>
+          <div class="v">VKG Agri Parts<br />A Division of VKG Impex<br />Khasra No. 222, Asdullapur, Chhaprauli<br />Sector-168, Noida (New Delhi, NCR, India)</div>
+        </div>
+      </div>
+
+      <form class="inquiry" action="https://formspree.io/f/myzkkwzp" method="POST" novalidate>
+        <div class="sub" style="color:var(--color-accent); font-weight:600; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:8px;" data-i18n="contact.inquiryForm">Inquiry Form</div>
+        <h2 style="font-size:24px; margin:0 0 22px;" data-i18n="contact.tellUs">Tell us what you need.</h2>
+
+        <div class="row">
+          <div class="field">
+            <label for="f-name" data-i18n="contact.fullName">Full Name</label>
+            <input id="f-name" name="name" type="text" required data-i18n-placeholder="contact.fullName" placeholder="Jane Doe" />
+          </div>
+          <div class="field">
+            <label for="f-company" data-i18n="contact.company">Company</label>
+            <input id="f-company" name="company" type="text" data-i18n-placeholder="contact.company" placeholder="Company Pvt. Ltd." />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="f-email" data-i18n="contact.emailField">Email</label>
+            <input id="f-email" name="email" type="email" required data-i18n-placeholder="contact.emailField" placeholder="you@company.com" />
+          </div>
+          <div class="field">
+            <label for="f-phone" data-i18n="contact.phoneField">Phone / WhatsApp</label>
+            <input id="f-phone" name="phone" type="tel" data-i18n-placeholder="contact.phoneField" placeholder="+1 555 000 0000" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="f-country" data-i18n="contact.country">Country</label>
+            <input id="f-country" name="country" type="text" placeholder="e.g. Peru" />
+          </div>
+          <div class="field">
+            <label for="f-brand" data-i18n="contact.tractorBrand">Tractor Brand</label>
+            <select id="f-brand" name="brand">
+              <option value="" data-i18n="contact.selectBrand">Select brand…</option>
+              <option data-i18n="contact.brandMF">Massey Ferguson</option>
+              <option data-i18n="contact.brandJD">John Deere</option>
+              <option data-i18n="contact.brandNH">New Holland</option>
+              <option data-i18n="contact.brandFord">Ford</option>
+              <option data-i18n="contact.brandCaseIH">Case IH</option>
+              <option data-i18n="contact.brandMahindra">Mahindra</option>
+              <option data-i18n="contact.brandSonalika">Sonalika</option>
+              <option data-i18n="contact.brandTAFE">TAFE</option>
+              <option data-i18n="contact.brandOther">Other / Multiple</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field full">
+            <label for="f-category" data-i18n="contact.partsCategory">Parts Category</label>
+            <select id="f-category" name="category">
+              <option value="" data-i18n="contact.selectCategory">Select category…</option>
+              <option data-i18n="contact.categoryEngine">Engine Parts</option>
+              <option data-i18n="contact.categoryTransmission">Transmission</option>
+              <option data-i18n="contact.categoryHydraulics">Hydraulics</option>
+              <option data-i18n="contact.categoryAxle">Steering & Axle</option>
+              <option data-i18n="contact.categoryElectrical">Electricals</option>
+              <option data-i18n="contact.categoryBody">Body & Sheet Metal</option>
+              <option data-i18n="contact.categoryMixed">Mixed / Multiple</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field full">
+            <label for="f-message" data-i18n="contact.partsList">Parts List / Message</label>
+            <textarea id="f-message" name="message" required data-i18n-placeholder="contact.placeholder" placeholder="Paste your parts list with OEM numbers and quantities, or describe what you need…"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" data-i18n="common.sendInquiry">Send Inquiry →</button>
+        <div class="form-status" role="status" aria-live="polite"></div>
+        <p class="note" data-i18n="contact.privacyNote">By submitting, you agree to be contacted by our sales team. Placeholder privacy text.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <img src="assets/logo.png" alt="VKG Agri Parts" style="height:56px; filter: brightness(0) invert(1);" />
+        </div>
+        <p data-i18n="footer.companyDesc">VKG Agri Parts is the agricultural division of VKG Impex, supplying tractor spare parts to global B2B buyers.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.company">Company</h4>
+        <ul>
+          <li><a href="about.html" data-i18n="footer.aboutUs">About Us</a></li>
+          <li><a href="brands.html" data-i18n="footer.brandsWeCover">Brands We Cover</a></li>
+          <li><a href="contact.html" data-i18n="footer.contactUs">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.getInTouchHead">Get in touch</h4>
+        <ul>
+          <li>sales@vkgimpex.com</li>
+          <li>vkgimpex@yahoo.com</li>
+          <li>+91 9871398644</li>
+          <li>+91 9871604111</li>
+          <li>www.vkgimpex.com</li>
+          <li>Khasra No. 222, Asdullapur, Chhaprauli<br />Sector-168, Noida (New Delhi, NCR, India)</li>
+        </ul>
+      </div>
+      <div class="legal">
+        <span data-i18n-html="true" data-i18n="footer.copyright">© <span id="year"></span> VKG Impex. All rights reserved.</span>
+        <span data-i18n="footer.legal">© VKG Impex</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+  <script src="js/i18n-init.js?v=3"></script>
+</body>
+</html>
