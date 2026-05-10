@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/styles.css?v=4" />
 </head>
 <body>
   <header class="site-header">
@@ -32,6 +32,15 @@
   <section class="scroll-stage" aria-label="Hero">
     <div class="scroll-sticky">
       <canvas id="hero-canvas"></canvas>
+      <!-- Mobile-only fallback: native HTML5 video. iOS Safari handles this
+           reliably whereas Three.js VideoTexture often shows black. -->
+      <video id="hero-video-mobile"
+             src="assets/hero-scroll.mp4"
+             autoplay
+             muted
+             loop
+             playsinline
+             webkit-playsinline></video>
       <div class="scroll-overlay">
         <div class="top">
           <span class="eyebrow" data-i18n="home.eyebrow">B2B Tractor Spare Parts</span>
@@ -192,6 +201,6 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
   <script src="js/i18n-init.js?v=3"></script>
-  <script type="module" src="js/scroll-video.js?v=3"></script>
+  <script type="module" src="js/scroll-video.js?v=4"></script>
 </body>
 </html>

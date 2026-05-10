@@ -2,8 +2,17 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
 
 const canvas = document.getElementById('hero-canvas');
 const stage = document.querySelector('.scroll-stage');
+
+// Mobile (especially iOS Safari) struggles with Three.js VideoTexture —
+// the texture often stays black even with all the right attributes set.
+// On narrow viewports we bail out and let CSS show a native <video> instead,
+// which iOS Safari plays reliably as long as it's muted + playsinline.
+const isMobile = window.matchMedia('(max-width: 860px)').matches;
+
 if (!canvas || !stage) {
   console.warn('[scroll-video] hero canvas or stage missing — skipping init');
+} else if (isMobile) {
+  console.info('[scroll-video] mobile viewport — using native <video> fallback');
 } else {
   initScrollVideo();
 }

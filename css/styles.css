@@ -121,6 +121,16 @@ img { display: block; max-width: 100%; }
   height: 100%;
   display: block;
 }
+/* Mobile-only native video fallback (hidden on desktop). */
+#hero-video-mobile {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
 .scroll-overlay {
   position: absolute;
   inset: 0;
@@ -726,4 +736,12 @@ html[dir="rtl"] .nav .lang-menu {
 @media (max-width: 520px) {
   .site-footer .wrap { grid-template-columns: 1fr; }
   .scroll-overlay { padding-top: 100px; }
+}
+
+/* ---------- Mobile hero: native video, no scroll-driven scrubbing ---------- */
+@media (max-width: 860px) {
+  .scroll-stage { height: 100vh; }
+  .scroll-sticky { position: relative; }
+  #hero-canvas { display: none; }
+  #hero-video-mobile { display: block; }
 }
