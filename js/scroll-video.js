@@ -10,17 +10,45 @@ if (!canvas || !stage) {
 
 function initScrollVideo() {
   // ---- Hidden video element ----
+  // iOS Safari will NOT allocate a video decoder for elements with
+  // display:none or visibility:hidden — the texture stays black on iPhone.
+  // Workaround: keep the element in the layout but visually undetectable
+  // (1×1 px, fully transparent, behind everything, no pointer events).
   const video = document.createElement('video');
   video.src = 'assets/hero-scroll.mp4';
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;
-  video.setAttribute('webkit-playsinline', 'true');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+  video.setAttribute('muted', '');
   video.preload = 'auto';
-  video.crossOrigin = 'anonymous';
   video.loop = false;
-  video.style.display = 'none';
+  Object.assign(video.style, {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '1px',
+    height: '1px',
+    opacity: '0',
+    pointerEvents: 'none',
+    zIndex: '-1',
+  });
   document.body.appendChild(video);
+
+  // iOS only "unlocks" video playback after a user gesture. Hook into the
+  // first touch/click anywhere on the page and prime the decoder, then pause.
+  // Without this, the video stays at frame 0 on iPhone Safari.
+  function primeOnGesture() {
+    const p = video.play();
+    if (p && typeof p.then === 'function') {
+      p.then(() => video.pause()).catch(() => {});
+    }
+    window.removeEventListener('touchstart', primeOnGesture);
+    window.removeEventListener('click', primeOnGesture);
+  }
+  window.addEventListener('touchstart', primeOnGesture, { once: true, passive: true });
+  window.addEventListener('click', primeOnGesture, { once: true });
 
   let videoReady = false;
   video.addEventListener('loadedmetadata', () => {
